@@ -1,8 +1,10 @@
 # What you added to Udacitask 2.0
 # -------------------------------------------------------
 1. What is the gem of your choice and how did you use it?
+After some searching, I decided I wanted to try adding some text effects using an ncurses-type library. Because 'curses' itself was only dropped from the stdlib a short while ago, I chose 'rainbow', and used the "blink" feature to flash the high priority notation in the list.
 2. Describe the 2 features you added to the project.
   a) Feature 1...
+  I added a "file" item type. This item will store a file path as its descriptor (set as '../' from the lib folder), and will store and print the first three lines of the file.
   b) Feature 2...
 
 # REFLECTIONS
