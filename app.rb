@@ -34,7 +34,6 @@ new_list.add("event", "Vacation", start_date: "Dec 20", end_date: "Dec 30")
 new_list.add("event", "Life happens")
 new_list.add("link", "https://www.udacity.com/", site_name: "Udacity Homepage")
 new_list.add("link", "http://ruby-doc.org")
-new_list.add("file", "README.md", due: "in 10 days")
 
 # SHOULD RETURN ERROR MESSAGES
 # ----------------------------
@@ -49,6 +48,11 @@ new_list.all
 # DEMO FILTER BY ITEM TYPE
 # ------------------------
 new_list.filter("event")
+
+# DEMO ADD A FILE ITEM
+# --------------------
+new_list.add("file", "README.md", due: "in 10 days")
+new_list.all
 
 # DEMO DELETE SEVERAL ITEMS
 # -------------------------
