@@ -13,6 +13,7 @@ class UdaciList
     	@items.push EventItem.new(description, options)
     elsif type == "link"
     	@items.push LinkItem.new(description, options)
+    else raise UdaciListErrors::InvalidItemType, "Cannot add '#{type}' item type"
     end
   end
   def delete(index)
