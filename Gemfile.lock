@@ -3,7 +3,7 @@ GEM
   specs:
     chronic (0.10.2)
     colorize (0.7.7)
-    curses (1.0.2)
+    rainbow (2.1.0)
 
 PLATFORMS
   ruby
@@ -11,7 +11,7 @@ PLATFORMS
 DEPENDENCIES
   chronic
   colorize
-  curses
+  rainbow
 
 BUNDLED WITH
    1.12.5
