@@ -13,11 +13,14 @@ class UdaciList
     	@items.push EventItem.new(description, options)
     elsif type == "link"
     	@items.push LinkItem.new(description, options)
-    else raise UdaciListErrors::InvalidItemType, "Cannot add '#{type}' item type"
+    else raise UdaciListErrors::InvalidItemType, "Cannot add '#{type}' item type."
     end
   end
   def delete(index)
-    @items.delete_at(index - 1)
+  	if index <= @items.length
+    	@items.delete_at(index - 1)
+    else raise UdaciListErrors::IndexExceedsListSize, "Item index #{index} does not exist."
+    end
   end
   def all
     puts "-" * @title.length
