@@ -6,6 +6,9 @@ class UdaciList
     @items = []
   end
   def add(type, description, options={})
+		if !["high", "medium", "low", nil].include?(options[:priority])
+			raise UdaciListErrors::InvalidPriorityValue, "Cannot create priority '#{options[:priority]}'."
+		end
     type = type.downcase
     if type == "todo"
     	@items.push TodoItem.new(description, options)
