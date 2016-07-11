@@ -10,6 +10,6 @@ class TodoItem
   def details
     format_item_type("todo") + 
     format_description(@description) + "due: " +
-    format_date([@due]) + format_priority(@priority)
+    format_date(@due) + format_priority(@priority)
   end
 end

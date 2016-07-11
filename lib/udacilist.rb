@@ -51,7 +51,7 @@ class UdaciList
     		puts "#{position + 1}) #{item.details}"
     	end
     else
-    	puts "No items matching item type '#{type}'"
+    	puts "No list items matching item type '#{type}'"
     end
   end
   	

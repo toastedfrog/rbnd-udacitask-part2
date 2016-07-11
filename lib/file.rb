@@ -11,7 +11,7 @@ class FileItem
 	def details
 		format_item_type("file") +
 		format_description(@description) + 
-		format_date([@due]) + "\n" +
+		format_date(@due) + "\n" +
 		@file_hunk
 	end
 	

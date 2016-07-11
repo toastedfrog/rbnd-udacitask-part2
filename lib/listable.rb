@@ -8,7 +8,7 @@ module Listable
     "#{description}".ljust(25)
   end
   
-  def format_date(date_range)
+  def format_date(*date_range)
   	if date_range.length == 1
   		dates = date_range[0] ? date_range[0].strftime("%D") : "No due date"
   	elsif date_range.length == 2
