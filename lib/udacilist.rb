@@ -5,6 +5,7 @@ class UdaciList
     @title = options[:title] ? options[:title] : ""
     @items = []
   end
+  
   def add(type, description, options={})
 		if !["high", "medium", "low", nil].include?(options[:priority])
 			raise UdaciListErrors::InvalidPriorityValue, "Cannot create priority '#{options[:priority]}'."
@@ -19,12 +20,14 @@ class UdaciList
     else raise UdaciListErrors::InvalidItemType, "Cannot add '#{type}' item type."
     end
   end
+  
   def delete(index)
   	if index <= @items.length
     	@items.delete_at(index - 1)
     else raise UdaciListErrors::IndexExceedsListSize, "Item index #{index} does not exist."
     end
   end
+  
   def all
     puts "-" * @title.length
     puts @title
@@ -33,4 +36,19 @@ class UdaciList
       puts "#{position + 1}) #{item.details}"
     end
   end
+  
+  def filter(type)
+    puts "-" * @title.length
+    puts @title
+    puts "-" * @title.length
+    matching_items = @items.find_all {|item| item.class.name.downcase == (type+"item").downcase}
+    if matching_items.length > 0
+    	matching_items.each_with_index do |item, position|
+    		puts "#{position + 1}) #{item.details}"
+    	end
+    else
+    	puts "No items matching item type '#{type}'"
+    end
+  end
+  	
 end

@@ -1,5 +1,9 @@
 module Listable
   # Listable methods go here
+  def format_item_type(type)
+  	"#{type.capitalize}:".ljust(7)
+  end
+  
   def format_description(description)
     "#{description}".ljust(25)
   end
