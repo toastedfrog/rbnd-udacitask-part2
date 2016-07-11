@@ -26,4 +26,10 @@ module Listable
     value = "" if !priority
     return value
   end
+  
+  def format_hunk(hunk)
+  	hunk_return = ""
+  	hunk.each_index {|index| hunk_return << "Line #{index+1}:#{hunk[index]}"}
+  	hunk_return
+  end
 end
