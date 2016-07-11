@@ -1,10 +1,17 @@
 GEM
+  remote: https://rubygems.org/
   specs:
+    chronic (0.10.2)
+    colorize (0.7.7)
+    curses (1.0.2)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  chronic
+  colorize
+  curses
 
 BUNDLED WITH
    1.12.5

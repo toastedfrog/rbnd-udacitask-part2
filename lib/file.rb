@@ -1,0 +1,2 @@
+class FileItem
+end
