@@ -49,3 +49,8 @@ new_list.all
 # DEMO FILTER BY ITEM TYPE
 # ------------------------
 new_list.filter("event")
+
+# DEMO DELETE SEVERAL ITEMS
+# -------------------------
+new_list.delete 2, 4, 7
+new_list.all

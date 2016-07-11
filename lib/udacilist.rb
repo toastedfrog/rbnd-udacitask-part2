@@ -23,10 +23,12 @@ class UdaciList
     end
   end
   
-  def delete(index)
-  	if index <= @items.length
-    	@items.delete_at(index - 1)
-    else raise UdaciListErrors::IndexExceedsListSize, "Item index #{index} does not exist."
+  def delete(*list)
+  	list.sort {|a, b| b <=> a}.each do |index|
+  		if index <= @items.length
+    		@items.delete_at(index - 1)
+    	else raise UdaciListErrors::IndexExceedsListSize, "Item index #{index} does not exist."
+    	end
     end
   end
   

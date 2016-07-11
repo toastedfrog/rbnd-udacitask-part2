@@ -4,12 +4,18 @@
 After some searching, I decided I wanted to try adding some text effects using an ncurses-type library. Because 'curses' itself was only dropped from the stdlib a short while ago, I chose 'rainbow', and used the "blink" feature to flash the high priority notation in the list.
 2. Describe the 2 features you added to the project.
   a) Feature 1...
-  I added a "file" item type. This item will store a file path as its descriptor (set as '../' from the lib folder), and will store and print the first three lines of the file.
+  I added a "file" item type. This item will store a file path as its descriptor (as described from the folder containing app.rb), and will store and print the first three lines of the file, along with an optional due-date.
   b) Feature 2...
+  My second feature was to allow any number of items to be deleted by their index number. One safeguard I implemented was to ensure the list of deletions was sorted in descending order, so that each index identified would remain in the proper place as the deletions occured.
 
 # REFLECTIONS
 # -------------------------------------------------------
 1. How long did you spend working on this project?
+I spent about 8 hours on this project, all-told. Some of that was spent debugging the bundler Gemfile and gems, and a bit was spent perusing gems themselves.
 2. What was the most rewarding challenge you conquered?
+I really enjoyed using everything I'd learned about file objects to build in a complementary FileItem class. I think extending it with an open feature would be fun, but I didn't have the time to do it.
 3. What two additional features did you build? Why?
+I added a "FileItem" class for storing file-paths along with their due-dates. I added a three-line preview that prints in the list view. I think with a few additions it could be a functional way to track files that need to be finished (homework, reports, etc.) on your computer.
+The multiple-delete feature was partially something I'd written for the first Udacitask. On that one, I allowed deletion by description as well, but realized that's a little cumbersome. I improved it here by limiting it to item numbers, and reverse-sorting the list as input so the deletions don't affect items in the list that still need to be deleted (if I take out item 2 before item 7, item 7 becomes 6, and I delete something else in the 7 slot).
 4. Where do you still have room to grow?
+I discovered that for all my research and playing with enumerables, I still have a lot to learn about how to work with hashes and arrays using enumerables to get the output I'd like. It seems trivial, but it's so frustrating.
